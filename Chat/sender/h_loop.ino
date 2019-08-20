@@ -46,10 +46,10 @@ void getMessageInChar() {
 
 void sendMessage(){   // wyslac payload jako parametr
     zbTxU = ZBTxRequest(addrU, payload, sizeof(payload));
-    sendingTime = millis();
+    //sendingTime = millis();
     xbee.send(zbTxU);
     ControlResp();
     clearPayloadMessage();
-    responseTime = millis();
-    resultTime = responseTime - sendingTime;
+    //responseTime = millis();
+    //resultTime = responseTime - sendingTime;
 }

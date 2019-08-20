@@ -24,7 +24,7 @@ int BaudRateXBee = 38400;
 int SerialMonitorBaudRate = 9600;
 int sizeOfFrame = 16;
 
-XBeeAddress64 addrU = addrU11;   //to configure
+XBeeAddress64 addrU = addrU10;   //to configure
 ZBTxRequest zbTxU;
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 

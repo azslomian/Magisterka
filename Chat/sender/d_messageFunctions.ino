@@ -25,6 +25,6 @@ void getMessageFromSerialMonitor(){
     for(j = 0; j < sizeOfMessage; j++){
       payload[j] = uint8_t(messageChar[j]);
     }
-    addTimeStampToMessage(j);
+    //addTimeStampToMessage(j);
     clearPayload(payload, sizeOfMessage);
 }
