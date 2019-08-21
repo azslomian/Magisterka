@@ -19,8 +19,8 @@ void loop() {
       Serial.print(payload[i]);
     }
     Serial.println();
-    ZBTxRequest zbTxU03 = ZBTxRequest(addrU02, payload, sizeof(payload));
-    xbee.send(zbTxU03);
+    ZBTxRequest zbTxU = ZBTxRequest(addrU, payload, sizeof(payload));
+    xbee.send(zbTxU);
     ControlResp();
     
    
