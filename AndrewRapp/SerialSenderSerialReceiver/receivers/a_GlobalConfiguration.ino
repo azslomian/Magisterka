@@ -1,4 +1,5 @@
 #include <XBee.h>
+#include <Printers.h>
 
 XBee xbee = XBee();
 
