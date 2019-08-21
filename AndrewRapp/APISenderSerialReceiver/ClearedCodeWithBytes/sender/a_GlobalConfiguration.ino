@@ -2,8 +2,7 @@
 
 XBee xbee = XBee();
 
-uint8_t payload1[] = { 0, 0 };
-uint8_t payload[100];
+uint8_t payload[] = { 0, 0 };
 
 // SH + SL Address of receiving XBee
 XBeeAddress64 addrU02 = XBeeAddress64(0x0013a200, 0x40A739F0);  
