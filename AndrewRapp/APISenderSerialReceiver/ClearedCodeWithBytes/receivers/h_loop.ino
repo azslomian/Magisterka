@@ -10,7 +10,6 @@ void loop() {
     koniec = 1;
     Serial.println("hahaha");
     Serial.println();
-    ControlResp();
     
     tone (sound, 5000, 500);  // dzwiek
     digitalWrite(led, HIGH); delay(500); digitalWrite(led, LOW);
