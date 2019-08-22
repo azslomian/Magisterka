@@ -3,6 +3,9 @@
 XBee xbee = XBee();
 
 uint8_t payload[] = { 0, 0 };
+//uint8_t messageForSerialSend[] = {126, 0, 14, 144, 0, 125, 51, 162, 0, 64, 167, 57, 237, 139, 32, 1, 0, 0, 1};   //from 10 to 11
+uint8_t messageForSerialSend[] = {126, 0, 14, 144, 0, 125, 51, 162, 0, 64, 159, 110, 114, 155, 6, 1, 0, 0, 89};    //from 11 to 10
+//uint8_t messageForSerialSend[] = {126, 0, 14, 144, 0, 125, 51, 162, 0, 64, 167, 58, 125, 51, 215, 27, 1, 0, 0, 147};    //from 9 to 10 
 
 // SH + SL Address of receiving XBee
 XBeeAddress64 addrU02 = XBeeAddress64(0x0013a200, 0x40A739F0);  

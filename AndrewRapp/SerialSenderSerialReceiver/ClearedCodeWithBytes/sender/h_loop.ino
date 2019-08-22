@@ -4,21 +4,24 @@ void loop() {
   
   if (Serial.available() > 0) {
     inByte = Serial.read();
+    int i=0;
     switch (inByte) {
-    case 'l':    
+    case 'l': 
+      while(i < sizeof(messageForSerialSend)){
+        Serial1.write( messageForSerialSend[i] );
+        i++;
+      } 
+      ControlResp();
+      //Serial1.print(messageForSerialSend);
       Serial.println("W lewo");
-      xbee.send(zbTxU);
-      ControlResp();
       delay (1000);
-      xbee.send(zbTxU);
-      ControlResp();
       break;
     case 'p':    
       Serial.println("W prawo");
-      xbee.send(zbTxU);
-      ControlResp();
-      delay (1000);
-      xbee.send(zbTxU);
+      while(i < sizeof(messageForSerialSend)){
+        //Serial1.print(messageForSerialSend[i], BYTE);
+        i++;
+      }
       ControlResp();
       break;
     default:
