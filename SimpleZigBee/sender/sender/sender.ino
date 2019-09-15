@@ -14,15 +14,16 @@
 
   unsigned long time = 0;
   unsigned long last_sent = 0;
-
-  uint8_t exFrame[] = { 0x10,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xfe,0x00,0x00,0xff };
+//7E 00 10 10 01 00 7D 33 A2 00 40 A7 3A 7D 33 FF FE 00 00 30 30 A8
+  //uint8_t exFrame[] = { 0x10,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xfe,0x00,0x00,0xff };
+  uint8_t exFrame[] = { 0x10, 0x01, 0x00, 0x7D, 0x33, 0xA2, 0x00, 0x40, 0xA7, 0x3A, 0x7D, 0x33, 0xFF, 0xFE, 0x00, 0x00, 0x30, 0x30 };
+  
   
   void setup() {
     Serial.begin( 9600 );
     xbeeSerial.begin( 38400 );
     xbee.setSerial( xbeeSerial );
-    xbee.setAcknowledgement(true);
-    uint8_t exFrame[] = { 0x10,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xfe,0x00,0x00,0xff,0xff };
+    //xbee.setAcknowledgement(true);
     zbp.setFrameData(0, exFrame, sizeof(exFrame));
     //zbp.setFrameData( zbp.getFrameLength()-2, val >> 8 & 0xff );
     
@@ -64,8 +65,8 @@
     time = millis();
     if( time > (last_sent+5000) ){
         last_sent = time;
-        zbp.setFrameData( zbp.getFrameLength()-2, val >> 8 & 0xff );
-        zbp.setFrameData( zbp.getFrameLength()-1, val & 0xff );
+        //zbp.setFrameData( zbp.getFrameLength()-2, val >> 8 & 0xff );
+        //zbp.setFrameData( zbp.getFrameLength()-1, val & 0xff );
         Serial.print("\nSend Message: ");
         printPacket( zbp );
         xbee.send( zbp );
