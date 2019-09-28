@@ -3,18 +3,23 @@
   #include <SoftwareSerial.h>
 
   unsigned long myMillis=0;   
-  unsigned long prevMillis=0;   
+  unsigned long prevMillis=0; 
+  int pin = 3;  
   
   void setup() {
     Serial.begin( 9600 );
-    pinMode(3,OUTPUT); 
+    pinMode(pin, OUTPUT); 
   }
 
   void loop() {
     myMillis = millis() - prevMillis;
     Serial.println(myMillis);
-    digitalWrite(3, HIGH); 
-    digitalWrite(3, LOW);
+    digitalWrite(pin, HIGH);
+    delay(100);
+    digitalWrite(pin, LOW);
+    delay(1000);
+   
+    
     prevMillis = millis();
     
     delay(1000);            // waits for a second

@@ -8,7 +8,7 @@
   
   void setup() {
     Serial.begin( 9600 );
-    pinMode(3,OUTPUT); 
+    pinMode(5,INPUT);
     attachInterrupt(digitalPinToInterrupt(5),buttonPressed1,RISING);  //  function for creating external interrupts at pin2 on Rising (LOW to HIGH)
   }
 
