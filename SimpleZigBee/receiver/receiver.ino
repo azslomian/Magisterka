@@ -38,6 +38,7 @@
   void loop() {
     // If data is waiting in the XBee serial port ...
     if( xbee.available() ){
+        Serial.print("tak ");
         // ... read the data.
         xbee.read();
         // If a complete message is available, display the contents
