@@ -45,7 +45,7 @@ XBeeAddress64 addrU13 = XBeeAddress64(0x0013a200, 0x40AD19F8);
 
 
 // SH + SL Address of receiving XBee
-XBeeAddress64 addr64 = addrU11;
+XBeeAddress64 addr64 = addrU09;
 ZBTxRequest zbTx = ZBTxRequest(addr64, payload, sizeof(payload));
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 
@@ -99,7 +99,7 @@ void loop() {
  
 
   // flash TX indicator
-  flashLed(statusLed, 1, 100);
+  //flashLed(statusLed, 1, 100);
 
   // after sending a tx request, we expect a status response
   // wait up to half second for the status response
@@ -130,5 +130,5 @@ void loop() {
     flashLed(errorLed, 2, 50);
   }
 
-  delay(1000);
+  delay(10);
 }
