@@ -8,7 +8,8 @@ void loop() {
 void getResponse(){
   if (xbee.getResponse().isAvailable()) {
       // got something
-      Serial.println("got something");
+      
+      //Serial.println("got something");
       if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
         getPacket();
       } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE) {
