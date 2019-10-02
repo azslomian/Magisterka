@@ -4,4 +4,5 @@ void setup() {
   Serial1.begin(38400);
   xbee.setSerial(Serial1);
   Serial.begin(9600);
+  pinMode(resetPin, OUTPUT); 
 }

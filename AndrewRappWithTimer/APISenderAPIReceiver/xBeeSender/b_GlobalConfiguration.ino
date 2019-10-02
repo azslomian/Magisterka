@@ -113,10 +113,11 @@ void loop() {
       // get the delivery status, the fifth byte
       if (txStatus.getDeliveryStatus() == SUCCESS) {
         // success.  time to celebrate
-        flashLed(statusLed, 5, 50);
+        Serial.println("Success");
+        //flashLed(statusLed, 5, 50);
       } else {
         // the remote XBee did not receive our packet. is it powered on?
-        flashLed(errorLed, 3, 500);
+        //flashLed(errorLed, 3, 500);
       }
     }
   } else if (xbee.getResponse().isError()) {
