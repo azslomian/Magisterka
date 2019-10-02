@@ -10,4 +10,5 @@ void setup() {
   }
   pinMode(led, OUTPUT);
   pinMode(sound, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(resetPin), resetClock, RISING);
 }

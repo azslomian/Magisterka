@@ -7,6 +7,9 @@ void loop() {
     Serial.print(inByte);
     Serial.print(", ");
   } else if (koniec == 0) {
+    myClockMillis = millis() - prevClockMillis;
+    Serial.println();
+    Serial.println(myClockMillis);
     koniec = 1;
     Serial.println("hahaha");
     Serial.println();
