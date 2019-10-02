@@ -1,4 +1,5 @@
 #include <XBee.h>
+#include <SoftwareSerial.h>
 
 XBee xbee = XBee();
 
@@ -57,7 +58,10 @@ unsigned long responseTime;
 long resultTime;
 unsigned long meanResponseTime = 0;
 
-
+//resetClock
+ unsigned long myMillis=0;   
+ unsigned long prevMillis=0; 
+ int resetPin = 3;  
 
 //SyncTime
 unsigned long  arduino_time;

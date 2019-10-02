@@ -7,11 +7,15 @@ void loop() {
     int i=0;
     switch (inByte) {
     case 'l': 
+      myMillis = millis() - prevMillis;
+      Serial.println(myMillis);
+      digitalWrite(resetPin, HIGH);
+      digitalWrite(resetPin, LOW);
       Serial1.write( messageForSerialSend, sizeof(messageForSerialSend));
       ControlResp();
-      //Serial1.print(messageForSerialSend);
       Serial.println("W lewo");
-      delay (1000);
+      delay (10);
+      prevMillis = millis();
       break;
     case 'p':    
       Serial.println("W prawo");
