@@ -13,7 +13,7 @@ void flashLed(int pin, int times, int wait) {
 void ControlResp () {
   // after sending a tx request, we expect a status response
   // wait up to half second for the status response
-  if (xbee.readPacket(500)) {  //zwraca true, jesli pakiet przyszedl, wpisuje go do bufora, nadpisuje poprzedni
+  if (xbee.readPacket(5000)) {  //zwraca true, jesli pakiet przyszedl, wpisuje go do bufora, nadpisuje poprzedni
     // got a response!
 
     // should be a znet tx status              

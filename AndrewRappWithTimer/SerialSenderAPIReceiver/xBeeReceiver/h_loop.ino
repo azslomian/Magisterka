@@ -61,6 +61,8 @@ void getPacket(){
   ControlACK(); 
   // set dataLed PWM to value of the first byte in the data
   Serial.println(dataLed, rx.getData(0));
+  Serial.println(dataLed, rx.getData(1));
+  
   analogWrite(dataLed, rx.getData(0));
 }
 

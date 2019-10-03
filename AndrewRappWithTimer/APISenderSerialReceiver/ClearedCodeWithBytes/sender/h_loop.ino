@@ -6,24 +6,21 @@ void loop() {
     inByte = Serial.read();
     switch (inByte) {
     case 'l':    
-      Serial.println("W lewo");
-      xbee.send(zbTxU);
-      ControlResp();
-      delay (1000);
-      xbee.send(zbTxU);
-      ControlResp();
+      for(int i = 0; i < 100; i++){
+        prevMillis = millis();
+        digitalWrite(resetPin, HIGH);     
+        xbee.send(zbTxU);
+        ControlResp();
+        myMillis = millis() - prevMillis;
+        Serial.println(myMillis);
+        delay(10);
+        digitalWrite(resetPin, LOW);
+      }
       break;
-    case 'p':    
-      Serial.println("W prawo");
-      xbee.send(zbTxU);
-      ControlResp();
-      delay (1000);
-      xbee.send(zbTxU);
-      ControlResp();
-      break;
+    
     default:
       break;
     }
   }
-  delay(100);
+  delay(10);
 }
