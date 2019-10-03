@@ -2,11 +2,19 @@
 void loop() {
 
   if (Serial1.available() > 0) {  // chyba czeka blokująco
+    if(koniec == 1){
+      myClockMillis = millis() - prevClockMillis;
+      Serial.println();
+      Serial.println(myClockMillis);
+    }
     koniec = 0;
     inByte = Serial1.read();
     Serial.print(inByte);
     Serial.print(", ");
   } else if (koniec == 0) {
+    myClockMillis = millis() - prevClockMillis;
+    Serial.println();
+    Serial.println(myClockMillis);
     koniec = 1;
     Serial.println("hahaha");
     Serial.println();
@@ -35,5 +43,5 @@ void loop() {
       }
   }
 
-  delay(10);
+  delay(1);
 }

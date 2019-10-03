@@ -31,6 +31,11 @@ XBeeAddress64 addrU = addrU10;   //to configure
 ZBTxRequest zbTxU;
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 
+volatile int output = LOW; 
+unsigned long myClockMillis=0;   
+unsigned long prevClockMillis=0; 
+int resetPin = 2;  // Only pins 2 and 3 are available for interrupts 
+
 int pin5 = 0;
 int statusLed = 13;
 int errorLed = 13;
