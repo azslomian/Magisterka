@@ -23,11 +23,11 @@ void ControlResp () {
       // get the delivery status, the fifth byte
       if (txStatus.getDeliveryStatus() == SUCCESS) {
         // success.  time to celebrate
-        flashLed(statusLed, 5, 200);
-        Serial.print("Success.");  
+        ///flashLed(statusLed, 5, 200);
+        //Serial.print("Success.");  
       } else {
         // the remote XBee did not receive our packet. is it powered on?
-        flashLed(errorLed, 3, 200);
+        //flashLed(errorLed, 3, 200);
         Serial.print("Error 3.");  
       }
     }
@@ -36,7 +36,7 @@ void ControlResp () {
       Serial.println(xbee.getResponse().getErrorCode());
   } else {
     // local XBee did not provide a timely TX Status Response -- should not happen
-    flashLed(errorLed, 2, 200);
+    //flashLed(errorLed, 2, 200);
     Serial.print("Error 4.");  
   }
 }
