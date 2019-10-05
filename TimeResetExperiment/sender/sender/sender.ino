@@ -15,9 +15,8 @@
     myMillis = millis() - prevMillis;
     Serial.println(myMillis);
     digitalWrite(resetPin, HIGH);
-    digitalWrite(resetPin, LOW);
     prevMillis = millis();
     delay(1000);
-    delay(1000);            // waits for a second
-    delay(1000);            // waits for a second
+    digitalWrite(resetPin, LOW);
+    delay(29000);
   }
