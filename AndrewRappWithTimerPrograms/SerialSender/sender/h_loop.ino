@@ -7,14 +7,14 @@ void loop() {
     int i=0;
     switch (inByte) {
       case 'l': 
-        for(int i = 0; i < 1000; i++){
+        for(int i = 0; i < 20; i++){
         prevMillis = millis();
         digitalWrite(resetPin, HIGH);
         Serial1.write( messageForSerialSend, sizeof(messageForSerialSend));
-        ControlResp();
+        //ControlResp();
         myMillis = millis() - prevMillis;
         Serial.println(myMillis);
-        delay (150);
+        delay (200);
         digitalWrite(resetPin, LOW);
         }
         break;

@@ -2,19 +2,21 @@
 
 XBee xbee = XBee();
 
-uint8_t payload[] = { 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0
-};
+//uint8_t payload[] = { 0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0, 0, 0, 0, 0,
+//0, 0, 0, 0
+//};
+
+uint8_t payload[] = { 0, 0 };
 
 // SH + SL Address of receiving XBee
 XBeeAddress64 addrU02 = XBeeAddress64(0x0013a200, 0x40A739F0);  
@@ -29,13 +31,14 @@ XBeeAddress64 addrU10 = XBeeAddress64(0x0013a200, 0x40A739ED);
 XBeeAddress64 addrU11 = XBeeAddress64(0x0013a200, 0x409F6E72);
 XBeeAddress64 addrU12 = XBeeAddress64(0x0013a200, 0x40AD19ED);    
 XBeeAddress64 addrU13 = XBeeAddress64(0x0013a200, 0x40AD19F8);
+XBeeAddress64 addrBroadcast = XBeeAddress64(0x00000000, 0x0000FFFF);
 
 int AP=2;  //1 , 2
 int BaudRateXBee = 38400;
 int SerialMonitorBaudRate = 9600;
 int sizeOfFrame = 16;
 
-XBeeAddress64 addrU = addrU09;   //to configure
+XBeeAddress64 addrU = addrBroadcast;   //to configure
 ZBTxRequest zbTxU = ZBTxRequest(addrU, payload, sizeof(payload));
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 

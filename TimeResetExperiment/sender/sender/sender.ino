@@ -18,5 +18,6 @@
     prevMillis = millis();
     delay(1000);
     digitalWrite(resetPin, LOW);
-    delay(29000);
+    delay(599000);
+    //delay(4000);
   }

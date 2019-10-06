@@ -6,14 +6,14 @@ void loop() {
     inByte = Serial.read();
     switch (inByte) {
     case 'l':    
-      for(int i = 0; i < 1000; i++){
+      for(int i = 0; i < 20; i++){
         prevMillis = millis();
         digitalWrite(resetPin, HIGH);     
         xbee.send(zbTxU);
         ControlResp();
         myMillis = millis() - prevMillis;
         Serial.println(myMillis);
-        delay(200);  // delay musi byc wiekszy niz czas przesylu pakietu 
+        delay(2000);  // delay musi byc wiekszy niz czas przesylu pakietu 
         digitalWrite(resetPin, LOW);
       }
       break;
