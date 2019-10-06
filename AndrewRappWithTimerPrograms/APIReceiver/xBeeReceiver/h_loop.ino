@@ -45,6 +45,9 @@ void getPacket(){
   Serial.println(myClockMillis);
   // now fill our zb rx class
   xbee.getResponse().getZBRxResponse(rx);
+  //Serial.println(rx.getOption());
+  //Serial.println(ZB_PACKET_ACKNOWLEDGED);
+  
   ControlACK(); 
   // set dataLed PWM to value of the first byte in the data
   //Serial.print(rx.getData(0));
