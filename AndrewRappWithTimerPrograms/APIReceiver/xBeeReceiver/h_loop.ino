@@ -7,7 +7,9 @@ void loop() {
 
 void getResponse(){
   if (xbee.getResponse().isAvailable()) {
+    Serial.println("yes1");
       if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
+        Serial.println("yes2");
         getPacket();
       } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE) {
         ControlAssociation();
