@@ -24,7 +24,7 @@ void ControlResp () {
       if (txStatus.getDeliveryStatus() == SUCCESS) {
         // success.  time to celebrate
         ///flashLed(statusLed, 5, 200);
-        //Serial.print("Success.");  
+        Serial.print("Success.");  
       } else {
         // the remote XBee did not receive our packet. is it powered on?
         //flashLed(errorLed, 3, 200);

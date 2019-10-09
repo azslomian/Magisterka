@@ -32,13 +32,14 @@ XBeeAddress64 addrU11 = XBeeAddress64(0x0013a200, 0x409F6E72);
 XBeeAddress64 addrU12 = XBeeAddress64(0x0013a200, 0x40AD19ED);    
 XBeeAddress64 addrU13 = XBeeAddress64(0x0013a200, 0x40AD19F8);
 XBeeAddress64 addrBroadcast = XBeeAddress64(0x00000000, 0x0000FFFF);
+XBeeAddress64 addrUndefined = XBeeAddress64(0xFFFFFFFF, 0xFFFFFFFF);
 
 int AP=2;  //1 , 2
 int BaudRateXBee = 38400;
 int SerialMonitorBaudRate = 9600;
 int sizeOfFrame = 16;
 
-XBeeAddress64 addrU = addrBroadcast;   //to configure
+XBeeAddress64 addrU = addrUndefined;   //to configure
 ZBTxRequest zbTxU = ZBTxRequest(addrU, payload, sizeof(payload));
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 

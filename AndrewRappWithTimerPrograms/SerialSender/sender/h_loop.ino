@@ -11,10 +11,10 @@ void loop() {
         prevMillis = millis();
         digitalWrite(resetPin, HIGH);
         Serial1.write( messageForSerialSend, sizeof(messageForSerialSend));
-        //ControlResp();
+        ControlResp();
         myMillis = millis() - prevMillis;
         Serial.println(myMillis);
-        delay (200);
+        delay (2000);
         digitalWrite(resetPin, LOW);
         }
         break;
