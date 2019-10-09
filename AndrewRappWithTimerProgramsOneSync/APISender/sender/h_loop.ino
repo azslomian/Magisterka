@@ -1,7 +1,4 @@
 void loop() {   
-  // break down 10-bit reading into two bytes and place in payload
-  pin5 = analogRead(5);
-  
   if (Serial.available() > 0) {
     inByte = Serial.read();
     switch (inByte) {

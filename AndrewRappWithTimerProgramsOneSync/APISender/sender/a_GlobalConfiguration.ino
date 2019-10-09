@@ -41,7 +41,7 @@ int BaudRateXBee = 38400;
 int SerialMonitorBaudRate = 9600;
 int sizeOfFrame = 16;
 
-XBeeAddress64 addrU = addrUndefined;   //to configure
+XBeeAddress64 addrU = addrU09;   //to configure
 ZBTxRequest zbTxU = ZBTxRequest(addrU, payload, sizeof(payload));
 ZBTxStatusResponse txStatus = ZBTxStatusResponse();
 
@@ -60,6 +60,8 @@ unsigned long meanResponseTime = 0;
 //resetClock
  unsigned long myMillis=0;   
  unsigned long prevMillis=0; 
+ unsigned long startTimeMillis=0; 
+ unsigned long restTimerMillis=0; 
  int resetPin = 3;  
 
 
