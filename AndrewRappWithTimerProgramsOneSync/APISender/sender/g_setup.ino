@@ -12,4 +12,7 @@ void setup() {
   prevMillis = millis();
   delay(2000); 
   digitalWrite(resetPin, LOW);
+
+  //zbTxU.setAddress16(addrLogU09);
+  //zbTxU.setFrameId(0);
 }
