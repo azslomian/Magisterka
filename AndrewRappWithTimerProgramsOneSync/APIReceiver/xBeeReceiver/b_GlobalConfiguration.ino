@@ -36,6 +36,7 @@ int statusLed = 13;
 int errorLed = 13;
 int dataLed = 13;
 int isSyncMode = 1;
+int stopInterruption = 0;
 volatile int output = LOW; 
 unsigned long myClockMillis=0;   
 unsigned long prevClockMillis=0; 
