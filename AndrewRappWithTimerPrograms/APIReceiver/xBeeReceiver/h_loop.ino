@@ -7,9 +7,9 @@ void loop() {
 
 void getResponse(){
   if (xbee.getResponse().isAvailable()) {
-    Serial.println("yes1");
+    myClockMillis = millis() - prevClockMillis;
+    Serial.println(myClockMillis);
       if (xbee.getResponse().getApiId() == ZB_RX_RESPONSE) {
-        Serial.println("yes2");
         getPacket();
       } else if (xbee.getResponse().getApiId() == MODEM_STATUS_RESPONSE) {
         ControlAssociation();
@@ -43,8 +43,6 @@ void ControlResponseError(){
 
 void getPacket(){
   // got a zb rx packet
-  myClockMillis = millis() - prevClockMillis;
-  Serial.println(myClockMillis);
   // now fill our zb rx class
   xbee.getResponse().getZBRxResponse(rx);
   //Serial.println(rx.getOption());
