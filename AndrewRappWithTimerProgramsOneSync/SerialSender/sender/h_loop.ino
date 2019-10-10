@@ -11,6 +11,7 @@ void loop() {
           myMillis = millis() - prevMillis; 
           Serial1.write( messageForSerialSend, sizeof(messageForSerialSend));
           ControlResp();
+          delay(10);
           Serial.println(myMillis);
         }
         break;
