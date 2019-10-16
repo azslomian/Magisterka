@@ -1,5 +1,9 @@
 // continuously reads packets, looking for ZB Receive or Modem Status
 void loop() {
+    while((millis() - prevClockMillis) < 1000000){
+    Serial.println((millis() - prevClockMillis));
+    delay(1000);
+  }
     xbee.readPacket();
     getResponse();
 }
