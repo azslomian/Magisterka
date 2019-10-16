@@ -1,6 +1,6 @@
 void resetClock()           
 {
      //myClockMillis = millis() - prevClockMillis;                                             
-     //Serial.println(myClockMillis);
+     Serial.println("przerwanie");
      prevClockMillis = millis();
 }
