@@ -5,4 +5,8 @@ void setup() {
   xbee.setSerial(Serial1);
   Serial.begin(9600);
   pinMode(resetPin, OUTPUT); 
+  digitalWrite(resetPin, HIGH);
+  prevMillis = millis();
+  delay(1000);
+  digitalWrite(resetPin, LOW);
 }
