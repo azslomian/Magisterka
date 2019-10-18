@@ -10,5 +10,7 @@ void setup() {
   xbee.begin(Serial1);
   
   attachInterrupt(digitalPinToInterrupt(resetPin), resetClock, RISING);
+    delay(15000);
+  detachInterrupt(digitalPinToInterrupt(resetPin));
   //flashLed(statusLed, 3, 50);
 }

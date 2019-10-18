@@ -13,4 +13,6 @@ void setup() {
   
   pinMode(resetPin, INPUT);
   attachInterrupt(digitalPinToInterrupt(resetPin), resetClock, RISING);
+  delay(15000);
+  detachInterrupt(digitalPinToInterrupt(resetPin));
 }

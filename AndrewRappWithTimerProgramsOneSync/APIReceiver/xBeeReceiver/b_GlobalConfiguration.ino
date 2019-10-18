@@ -41,3 +41,5 @@ volatile int output = LOW;
 unsigned long myClockMillis=0;   
 unsigned long prevClockMillis=0; 
 int resetPin = 2;  // Only pins 2 and 3 are available for interrupts 
+
+int stopLoop = 0;
