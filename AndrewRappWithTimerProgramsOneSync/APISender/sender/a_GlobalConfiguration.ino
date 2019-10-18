@@ -2,6 +2,20 @@
 
 XBee xbee = XBee();
 
+uint8_t payload[] = { 0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0, 0, 0, 0, 0,
+0, 0, 0, 0
+};
+
 //uint8_t payload[] = { 0, 0, 0, 0, 0, 0, 0, 0,
 //0, 0, 0, 0, 0, 0, 0, 0,
 //0, 0, 0, 0, 0, 0, 0, 0,
@@ -9,14 +23,10 @@ XBee xbee = XBee();
 //0, 0, 0, 0, 0, 0, 0, 0,
 //0, 0, 0, 0, 0, 0, 0, 0,
 //0, 0, 0, 0, 0, 0, 0, 0,
-//0, 0, 0, 0, 0, 0, 0, 0,
-//0, 0, 0, 0, 0, 0, 0, 0,
-//0, 0, 0, 0, 0, 0, 0, 0,
-//0, 0, 0, 0, 0, 0, 0, 0,
-//0, 0, 0, 0
+//0, 0, 0, 0, 0, 0, 0, 0
 //};
 
-uint8_t payload[] = { 0, 0 };
+//uint8_t payload[] = { 0, 0 };
 
 // SH + SL Address of receiving XBee
 XBeeAddress64 addrU02 = XBeeAddress64(0x0013a200, 0x40A739F0);  
@@ -63,7 +73,7 @@ unsigned long meanResponseTime = 0;
  unsigned long startTimeMillis=0; 
  unsigned long restTimerMillis=0; 
  int resetPin = 3;  
-
+ int stopLoop = 0;
 
 //SyncTime
 unsigned long  arduino_time;
