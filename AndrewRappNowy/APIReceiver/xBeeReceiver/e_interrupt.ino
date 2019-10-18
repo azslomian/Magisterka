@@ -1,0 +1,4 @@
+void resetClock()           
+{
+     prevClockMillis = millis();
+}
