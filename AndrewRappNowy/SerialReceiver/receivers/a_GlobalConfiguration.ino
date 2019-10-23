@@ -37,7 +37,8 @@ unsigned long prevClockMillis=0;
 int resetPin = 2;  // Only pins 2 and 3 are available for interrupts 
 int numberOfBytes = 0;
 int isFirstByte = 0;
-int table[150]; 
+int table[150];
+int myBufferMessage[150]; 
 
 int pin5 = 0;
 int statusLed = 13;

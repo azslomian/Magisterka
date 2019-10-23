@@ -4,19 +4,20 @@ void loop() {
   if (sth > 0) {  // chyba czeka blokująco
     koniec = 0;
     table[numberOfBytes] = sth;
-    Serial1.read();
-    Serial1.read();
-    Serial1.read();
+    myBufferMessage[numberOfBytes] = Serial1.read(); 
     numberOfBytes++;
   } else if (koniec == 0) {
     myClockMillis = millis() - prevClockMillis;
     myClockMillis = myClockMillis - numberOfBytes;
     Serial.println(myClockMillis);
     koniec = 1;
-    for(int l = 0 ; l < numberOfBytes ; l++){
-       Serial.println(table[l]);
+    for(int b = 0 ; b < numberOfBytes ; b++){
+       Serial.println(table[b]);
+    }
+    Serial.println("Wiadomosc");
+    for(int v = 0 ; v < numberOfBytes ; v++){
+       Serial.println(myBufferMessage[v]);
     }
     numberOfBytes = 0;
   }
-  delay(1);
 }

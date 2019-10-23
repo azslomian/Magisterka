@@ -1,13 +1,13 @@
 // continuously reads packets, looking for ZB Receive or Modem Status
 void loop() {
-  while(stopLoop != 1 && ((millis() - prevClockMillis) < 100000)){
-    Serial.println((millis() - prevClockMillis));
-    delay(1000);
-    if(Serial.available() > 0){
-      Serial.println("koniec");
-      stopLoop = 1;
-    }
-  }
+//  while(stopLoop != 1 && ((millis() - prevClockMillis) < 100000)){
+//    Serial.println((millis() - prevClockMillis));
+//    delay(1000);
+//    if(Serial.available() > 0){
+//      Serial.println("koniec");
+//      stopLoop = 1;
+//    }
+//  }
   
   xbee.readPacket();
   getResponse();
@@ -59,7 +59,12 @@ void getPacket(){
   
   ControlACK(); 
   // set dataLed PWM to value of the first byte in the data
-  //Serial.print(rx.getData(0));
+  Serial.println("Hejadsssssssssssssssssssssssssssssssssssssssss");
+  for(int b = 0; b < 330; b++){
+    Serial.print(rx.getData(b));
+    Serial.print(",");
+  }
+  
   //nalogWrite(dataLed, rx.getData(0));
 }
 
