@@ -1,7 +1,7 @@
 void setup() {
   // initialize the digital pin as an output.
   Serial.begin(9600);
-  Serial1.begin(38400);
+  Serial1.begin(115200);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo only
   }
